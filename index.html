@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      
+    <!--link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" /-->
+    <link href="css/main.css" rel="stylesheet" />
+
+    <!-- Include the AngularJS library -->
+    <!--script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script-->
+    <script src="js/shared/angular.js"></script>
+  </head>
+  <body>
+    <a href="user.html" target="_blank">Click to add more user</a><br>
+    <div class="main" ng-controller="MainController">
+        <input type="button" value="Click Here to Fetch All Users" ng-click="fetchallusers()"/>
+       <ul>
+        <li ng-repeat="user in users">
+           <ul>User Details <hr>
+                <li><label>Email : </label>{{user.user_email}}</li>
+                <li><label>Phone : </label>{{user.user_phone}}</li>
+                <li><label>Password : </label>{{user.user_password}}</li>
+                <li><label>Address1 : </label>{{user.address_id.address1}}</li>
+                <li><label>Address2 : </label>{{user.address_id.address2}}</li>
+                <li><label>Pin : </label>{{user.address_id.pin}}</li>
+                <li><label>Country : </label>{{user.address_id.country}}</li>
+               <br clear="all">
+            </ul>
+        </li> 
+       </ul>
+        
+    </div>
+	
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+
+  </body>
